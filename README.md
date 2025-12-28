@@ -194,8 +194,13 @@ The site is automatically deployed to **Netlify** when changes are pushed to the
 ## 📜 License
 
 ```
-Copyright (c) 2025, ZypherusKhan
-Licensed under the GNU General Public License v3.0
+*This is a human-readable summary of (and not a substitute for) the license.*
+
+You are allowed to use material in this repository under the following conditions:
+- You must credit this project if you use any of its code
+- Your project must be open-source if it uses any part of this code
+- Closed-source / proprietary use is not allowed
+- No warranty
 ```
 
 See [LICENSE](LICENSE) for full details.
