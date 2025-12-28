@@ -6,7 +6,7 @@
 
   "description": "Modern web application for parsing and analyzing Endless Host Roles game logs",
   "author": "Zypherus Khan",
-  "license": "GPL-3.0-or-later",
+  "license": "Custom",
 
   "repository": {
     "type": "git",
