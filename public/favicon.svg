@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <!-- Background -->
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </linearGradient>
+
+    <!-- Lens ring -->
+    <linearGradient id="ring-grad" x1="0%" y1="100%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#22d3ee"/>
+      <stop offset="40%" stop-color="#38bdf8"/>
+      <stop offset="70%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#a3e635"/>
+    </linearGradient>
+
+    <!-- Warning -->
+    <linearGradient id="alert-grad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="50%" stop-color="#fb7185"/>
+      <stop offset="100%" stop-color="#ef4444"/>
+    </linearGradient>
+
+    <!-- Lens glow -->
+    <radialGradient id="lens-glow" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.3"/>
+      <stop offset="70%" stop-color="#22d3ee" stop-opacity="0.1"/>
+      <stop offset="100%" stop-color="#020617" stop-opacity="0"/>
+    </radialGradient>
+
+    <filter id="soft-glow">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <clipPath id="lens-clip">
+      <circle cx="268" cy="240" r="130"/>
+    </clipPath>
+  </defs>
+
+  <!-- Background -->
+  <circle cx="256" cy="256" r="256" fill="url(#bg-grad)"/>
+
+  <!-- Decorative grid -->
+  <g opacity="0.06" stroke="#94a3b8">
+    <path d="M0 128 H512"/>
+    <path d="M0 256 H512"/>
+    <path d="M0 384 H512"/>
+    <path d="M128 0 V512"/>
+    <path d="M256 0 V512"/>
+    <path d="M384 0 V512"/>
+  </g>
+
+  <!-- Ambient lens glow -->
+  <circle cx="268" cy="240" r="165" fill="url(#lens-glow)"/>
+
+  <!-- Background logs -->
+  <g opacity="0.3">
+    <rect x="70" y="135" width="210" height="20" rx="10" fill="#06b6d4"/>
+    <rect x="70" y="175" width="270" height="20" rx="10" fill="#8b5cf6"/>
+    <rect x="70" y="215" width="230" height="20" rx="10" fill="#10b981"/>
+    <rect x="70" y="255" width="210" height="20" rx="10" fill="#64748b"/>
+    <rect x="70" y="295" width="170" height="20" rx="10" fill="#64748b"/>
+    <rect x="70" y="335" width="210" height="20" rx="10" fill="#64748b"/>
+  </g>
+
+  <!-- Magnifying glass -->
+  <g>
+    <path
+      d="M350 350 L440 440"
+      stroke="#475569"
+      stroke-width="48"
+      stroke-linecap="round"
+    />
+    <circle
+      cx="268"
+      cy="240"
+      r="130"
+      fill="#020617"
+      stroke="url(#ring-grad)"
+      stroke-width="22"
+      filter="url(#soft-glow)"
+    />
+    <!-- Inner lens ring -->
+    <circle
+      cx="268"
+      cy="240"
+      r="108"
+      fill="none"
+      stroke="#22d3ee"
+      stroke-opacity="0.3"
+      stroke-width="2"
+    />
+  </g>
+
+  <!-- Lens content -->
+  <g clip-path="url(#lens-clip)">
+    <!-- Colored log lines -->
+    <rect x="150" y="135" width="180" height="20" rx="10" fill="#22d3ee"/>
+    <rect x="150" y="175" width="220" height="20" rx="10" fill="#38bdf8"/>
+    <rect x="150" y="215" width="200" height="20" rx="10" fill="#34d399"/>
+    <rect x="150" y="255" width="180" height="20" rx="10" fill="#a3e635"/>
+    <rect x="150" y="295" width="150" height="20" rx="10" fill="#facc15"/>
+    <rect x="150" y="335" width="170" height="20" rx="10" fill="#fb7185"/>
+
+    <!-- RPC activity graph -->
+    <polyline
+      points="300,300 320,260 340,275 360,235 385,255"
+      fill="none"
+      stroke="#a7f3d0"
+      stroke-width="4"
+    />
+
+    <!-- Anomaly marker -->
+    <polygon
+      points="300,175 318,205 352,215 318,225 300,255 282,225 248,215 282,205"
+      fill="url(#alert-grad)"
+      filter="url(#soft-glow)"
+    />
+  </g>
+
+
+</svg>
